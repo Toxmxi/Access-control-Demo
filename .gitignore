@@ -6,3 +6,4 @@ dist/
 !.env.demo
 .vercel.env
 /src/data.json
+.vercel
