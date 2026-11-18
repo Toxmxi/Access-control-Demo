@@ -1,0 +1,51 @@
+/* Global font, Tailwind entrypoint, and light-theme color tokens. */
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "Sarabun", system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  --bg: #eef3f7;
+  --card: #ffffff;
+  --ink: #17283b;
+  --mute: #5d6f82;
+  --line: #dbe4ec;
+  --navy: #12355b;
+  --teal: #13917f;
+  --amber: #e8a02c;
+  --red: #d1495b;
+  --tint: #f5f8fb;
+  --button-ink: #ffffff;
+}
+
+/* Dark theme overrides for the same shared design tokens. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e1824;
+  --card: #15263a;
+  --ink: #e6eef6;
+  --mute: #93a6b9;
+  --line: #26394f;
+  --navy: #6fb1f0;
+  --teal: #35c2ae;
+  --amber: #f0b550;
+  --red: #ef6f80;
+  --tint: #1a2d44;
+  --button-ink: #0e1824;
+}
+
+/* Base sizing and keyboard-focus styles used by all components. */
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: var(--bg); color: var(--ink); }
+button, input, select, textarea { font: inherit; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #e8a02c;
+  outline-offset: 2px;
+}
+/* Removes controls and backgrounds that are not useful on printed reports. */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white !important; }
+}
